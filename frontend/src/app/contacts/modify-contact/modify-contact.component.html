@@ -1,0 +1,46 @@
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Contact</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="modifyContactForm">
+            <div class="form-group">
+                <label>First name</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="First name" formControlName="firstName">
+                </div>
+                <div *ngIf="firstName.errors" class="small text-danger mt-1 py-1">
+                    <span *ngIf="firstName.errors['required'] && firstName.touched">Field is required.</span>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label>Last name</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Last name" formControlName="lastName">
+                </div>
+                <div *ngIf="lastName.errors" class="small text-danger mt-1 py-1">
+                    <span *ngIf="lastName.errors['required'] && lastName.touched">Field is required.</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="mt-1 py-1">Phone number</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Phone number" formControlName="phoneNumber">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="save()">Save</button>
+    </div>
+</div>

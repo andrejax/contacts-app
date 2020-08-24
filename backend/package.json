@@ -1,0 +1,40 @@
+{
+  "name": "contacts-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node .",
+    "watch": "tsnd --respawn src/index.ts"
+  },
+  "author": "Andreja Mirchevska",
+  "license": "ISC",
+  "dependencies": {
+    "argon2": "^0.27.0",
+    "body-parser": "^1.19.0",
+    "celebrate": "^12.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
+    "express-jwt": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.0",
+    "reflect-metadata": "^0.1.13",
+    "typedi": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.7",
+    "@types/express-jwt": "0.0.42",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/mongoose": "^5.7.36",
+    "@types/node": "^14.6.0",
+    "prettier": "^1.17.0",
+    "ts-node-dev": "^1.0.0-pre.60",
+    "tslint": "^5.20.1",
+    "typescript": "^3.1.3"
+  }
+}

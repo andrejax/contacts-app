@@ -1,0 +1,28 @@
+<div class="d-flex  p-3 px-md-4 mb-3 bg-white">
+    <a class="btn btn-primary btn-sm ml-md-auto" (click)="createContact()">New contact</a>
+</div>
+<table class="table" *ngIf="contacts">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">email</th>
+            <th scope="col">Phone number</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contacts; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{contact.firstName}}</td>
+            <td>{{contact.lastName}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phoneNumber}}</td>
+            <td>
+                <a class="btn btn-primary btn-sm ml-md-auto" (click)="editContact(contact, i)">Edit</a>
+                <a class="btn btn-danger btn-sm ml-md-auto" (click)="remove(contact, i)">Remove</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
